@@ -17,7 +17,7 @@ resource "azurerm_linux_web_app" "main" {
   https_only          = true
 
   site_config {
-    http2_enabled    = true
+    http2_enabled = true
   }
 
   identity {
