@@ -10,6 +10,7 @@ on:
     branches: ["master", "instructor"]
     paths:
       - '**/terraform/**'
+  workflow_dispatch:
 
 #Special permissions required for OIDC authentication
 permissions:
