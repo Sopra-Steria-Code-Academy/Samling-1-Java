@@ -1,9 +1,15 @@
 name: Terraform Drift Detection Pipeline
 
+#on:
+#  schedule:
+#    - cron: 0 6 * * * # every night at 6:00 am
+#  workflow_dispatch:
+
 on:
-  schedule:
-    - cron: 0 6 * * * # every night at 6:00 am
-  workflow_dispatch:
+  push:
+    branches: ["master", "instructor"]
+    paths:
+      - '**/terraform/**'
 
 #Special permissions required for OIDC authentication
 permissions:
@@ -21,3 +27,4 @@ jobs:
       client-id: ${{ secrets.TF_AZURE_CLIENT_ID }}
       subscription-id: ${{ secrets.TF_AZURE_SUBSCRIPTION_ID }}
       tenant-id: ${{ secrets.TF_AZURE_TENANT_ID }}
+      client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
