@@ -3,7 +3,7 @@ resource "azurerm_service_plan" "main" {
   name                = "${var.app_service_plan}-${var.environment}"
   location            = var.location
   resource_group_name = azurerm_resource_group.main.name
-  os_type             = "Linux"
+  os_type             = "Windows"
   sku_name            = "B2"
   worker_count        = 1
 }
