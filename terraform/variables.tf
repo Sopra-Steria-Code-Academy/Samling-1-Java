@@ -5,7 +5,7 @@ variable "environment" {
 }
 variable "rg_name" {
   type        = string
-  description = "The resource group name"
+  description = "The resource group name2"
   default     = "rc-codeacademy-example"
 }
 
